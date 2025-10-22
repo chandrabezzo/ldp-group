@@ -1,0 +1,221 @@
+---
+import digitalLogo from '../assets/4. LDP Digital.png';
+import toolsLogo from '../assets/5. LDP TOOLS.png';
+import travelLogo from '../assets/6. LDP Travel.png';
+import publisherLogo from '../assets/7. LDP Publisher.png';
+
+const services = [
+	{
+		title: 'Training & Consulting',
+		description: 'Professional training programs and expert consulting services to elevate your business capabilities and drive organizational excellence.',
+		icon: '🎓',
+		color: '#2563eb'
+	},
+	{
+		title: 'Digital Solutions',
+		description: 'Cutting-edge digital transformation services to modernize your business processes and enhance operational efficiency.',
+		logo: digitalLogo.src,
+		color: '#1e40af'
+	},
+	{
+		title: 'Business Tools',
+		description: 'Comprehensive suite of business tools and software solutions designed to streamline workflows and boost productivity.',
+		logo: toolsLogo.src,
+		color: '#f59e0b'
+	},
+	{
+		title: 'Travel Services',
+		description: 'Professional travel management solutions for corporate and business travel needs with exceptional service standards.',
+		logo: travelLogo.src,
+		color: '#ef4444'
+	},
+	{
+		title: 'Publishing',
+		description: 'Professional publishing services for books, journals, and digital content with comprehensive editorial support.',
+		logo: publisherLogo.src,
+		color: '#dc2626'
+	},
+	{
+		title: 'Foundation Services',
+		description: 'Social responsibility programs and foundation management services to create positive community impact.',
+		icon: '🤝',
+		color: '#10b981'
+	},
+	{
+		title: 'Property Solutions',
+		description: 'Real estate and property management services providing comprehensive solutions for your property needs.',
+		icon: '🏢',
+		color: '#8b5cf6'
+	}
+];
+---
+
+<section id="services" class="services section">
+	<div class="container">
+		<div class="section-header">
+			<h2 class="section-title">Our Services</h2>
+			<p class="section-subtitle">
+				Comprehensive business solutions tailored to your needs
+			</p>
+		</div>
+
+		<div class="services-grid">
+			{services.map((service) => (
+				<div class="service-card">
+					<div class="service-icon" style={`background: linear-gradient(135deg, ${service.color}15 0%, ${service.color}05 100%);`}>
+						{service.logo ? (
+							<img src={service.logo} alt={service.title} />
+						) : (
+							<span class="icon-emoji">{service.icon}</span>
+						)}
+					</div>
+					<h3 class="service-title">{service.title}</h3>
+					<p class="service-description">{service.description}</p>
+					<div class="service-arrow" style={`color: ${service.color};`}>
+						→
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.services {
+		background: var(--color-bg-light);
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: calc(var(--spacing-unit) * 8);
+	}
+
+	.section-title {
+		font-size: 3rem;
+		margin-bottom: calc(var(--spacing-unit) * 2);
+		position: relative;
+		display: inline-block;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+		border-radius: 2px;
+	}
+
+	.section-subtitle {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		margin-top: calc(var(--spacing-unit) * 3);
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: calc(var(--spacing-unit) * 4);
+	}
+
+	.service-card {
+		background: white;
+		padding: calc(var(--spacing-unit) * 4);
+		border-radius: 16px;
+		transition: var(--transition);
+		border: 1px solid var(--color-border);
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.service-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.3s ease;
+	}
+
+	.service-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.service-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+		border-color: var(--color-primary);
+	}
+
+	.service-icon {
+		width: 80px;
+		height: 80px;
+		border-radius: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: calc(var(--spacing-unit) * 3);
+		transition: var(--transition);
+	}
+
+	.service-card:hover .service-icon {
+		transform: scale(1.1) rotate(5deg);
+	}
+
+	.service-icon img {
+		max-width: 70%;
+		max-height: 70%;
+		object-fit: contain;
+	}
+
+	.icon-emoji {
+		font-size: 2.5rem;
+	}
+
+	.service-title {
+		font-size: 1.5rem;
+		margin-bottom: calc(var(--spacing-unit) * 2);
+		color: var(--color-text);
+	}
+
+	.service-description {
+		color: var(--color-text-light);
+		line-height: 1.7;
+		margin-bottom: calc(var(--spacing-unit) * 3);
+	}
+
+	.service-arrow {
+		font-size: 2rem;
+		font-weight: bold;
+		opacity: 0;
+		transform: translateX(-10px);
+		transition: var(--transition);
+	}
+
+	.service-card:hover .service-arrow {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	@media (max-width: 768px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.section-subtitle {
+			font-size: 1.1rem;
+		}
+	}
+</style>

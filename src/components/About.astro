@@ -1,0 +1,180 @@
+---
+---
+
+<section id="about" class="about section">
+	<div class="container">
+		<div class="about-content">
+			<div class="about-text">
+				<h2 class="about-title">About LDP Group</h2>
+				<div class="about-subtitle">PT. Lentera Duta Persada</div>
+
+				<p class="about-description">
+					LDP Group stands as a leading integrated business solutions provider in Indonesia, committed to delivering excellence across multiple industries. Our diverse portfolio encompasses training, consulting, digital transformation, business tools, travel services, publishing, foundation work, and property solutions.
+				</p>
+
+				<p class="about-description">
+					With a dedication to innovation and client success, we partner with organizations to overcome challenges, seize opportunities, and achieve sustainable growth. Our team of experienced professionals brings expertise, integrity, and a results-driven approach to every engagement.
+				</p>
+
+				<div class="stats-grid">
+					<div class="stat-item">
+						<div class="stat-number">8+</div>
+						<div class="stat-label">Service Divisions</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">100+</div>
+						<div class="stat-label">Clients Served</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">15+</div>
+						<div class="stat-label">Years Experience</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="about-features">
+				<div class="feature-card">
+					<div class="feature-icon">🎯</div>
+					<h3>Our Mission</h3>
+					<p>To empower businesses with innovative solutions that drive growth, efficiency, and sustainable success.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">👁️</div>
+					<h3>Our Vision</h3>
+					<p>To be the most trusted and comprehensive business solutions provider in Indonesia and beyond.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">💎</div>
+					<h3>Our Values</h3>
+					<p>Excellence, integrity, innovation, and client-focused service in everything we do.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background: white;
+	}
+
+	.about-content {
+		display: grid;
+		gap: calc(var(--spacing-unit) * 8);
+	}
+
+	.about-title {
+		font-size: 2.5rem;
+		margin-bottom: calc(var(--spacing-unit) * 1);
+		color: var(--color-text);
+	}
+
+	.about-subtitle {
+		font-size: 1.5rem;
+		color: var(--color-primary);
+		font-weight: 600;
+		margin-bottom: calc(var(--spacing-unit) * 4);
+	}
+
+	.about-description {
+		font-size: 1.1rem;
+		color: var(--color-text-light);
+		line-height: 1.8;
+		margin-bottom: calc(var(--spacing-unit) * 3);
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--spacing-unit) * 4);
+		margin-top: calc(var(--spacing-unit) * 6);
+	}
+
+	.stat-item {
+		text-align: center;
+		padding: calc(var(--spacing-unit) * 3);
+		background: var(--color-bg-light);
+		border-radius: 12px;
+		transition: var(--transition);
+	}
+
+	.stat-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	}
+
+	.stat-number {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-primary);
+		margin-bottom: calc(var(--spacing-unit) * 1);
+	}
+
+	.stat-label {
+		font-size: 1rem;
+		color: var(--color-text-light);
+		font-weight: 500;
+	}
+
+	.about-features {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: calc(var(--spacing-unit) * 3);
+	}
+
+	.feature-card {
+		background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+		padding: calc(var(--spacing-unit) * 4);
+		border-radius: 16px;
+		transition: var(--transition);
+		border: 2px solid transparent;
+	}
+
+	.feature-card:hover {
+		border-color: var(--color-primary);
+		transform: translateY(-5px);
+		box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: calc(var(--spacing-unit) * 2);
+	}
+
+	.feature-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: calc(var(--spacing-unit) * 2);
+		color: var(--color-text);
+	}
+
+	.feature-card p {
+		color: var(--color-text-light);
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	@media (max-width: 968px) {
+		.stats-grid {
+			grid-template-columns: 1fr;
+			gap: calc(var(--spacing-unit) * 2);
+		}
+
+		.about-title {
+			font-size: 2rem;
+		}
+
+		.about-subtitle {
+			font-size: 1.25rem;
+		}
+
+		.stat-number {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.about-features {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

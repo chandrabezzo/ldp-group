@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "LDP Group - PT. Lentera Duta Persada",
+	"alternateName": "PT. Lentera Duta Persada",
+	"url": "https://ldpgroup.com",
+	"logo": "https://ldpgroup.com/logo.png",
+	"description": "LDP Group is an integrated business solutions provider offering training, consulting, digital services, tools, travel, publishing, foundation, and property services.",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Jakarta",
+		"addressCountry": "Indonesia"
+	},
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"telephone": "+62-21-1234-5678",
+		"contactType": "Customer Service",
+		"email": "info@ldpgroup.com",
+		"areaServed": "ID",
+		"availableLanguage": ["en", "id"]
+	},
+	"sameAs": [
+		"https://www.linkedin.com/company/ldpgroup",
+		"https://www.facebook.com/ldpgroup",
+		"https://www.instagram.com/ldpgroup"
+	],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Business Solutions Services",
+		"itemListElement": [
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Training & Consulting",
+					"description": "Professional training programs and expert consulting services"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Digital Solutions",
+					"description": "Digital transformation and IT services"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Business Tools",
+					"description": "Business software and productivity tools"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Travel Services",
+					"description": "Corporate and business travel management"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Publishing",
+					"description": "Professional publishing and editorial services"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Foundation Services",
+					"description": "Social responsibility and community programs"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Property Solutions",
+					"description": "Real estate and property management services"
+				}
+			}
+		]
+	}
+};
+---
+
+<Layout>
+	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+	<Header />
+	<main>
+		<Hero />
+		<About />
+		<Services />
+		<Contact />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+	}
+</style>
