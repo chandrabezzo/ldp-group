@@ -32,8 +32,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          DEPLOY_TARGET: github
 
       - name: Add CNAME to artifact
         run: echo "ldpgroup.co.id" > ./dist/CNAME

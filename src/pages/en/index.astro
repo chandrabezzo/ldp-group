@@ -6,10 +6,10 @@ import About from '../../components/About.astro';
 import Services from '../../components/Services.astro';
 import Contact from '../../components/Contact.astro';
 import Footer from '../../components/Footer.astro';
-import i18next, { t, changeLanguage } from "i18next";
+import { initI18n } from "../../utils/i18n";
 import { HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("en");
+await initI18n("en");
 
 const structuredData = {
 	"@context": "https://schema.org",

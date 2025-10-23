@@ -1,5 +1,7 @@
 ---
-import { t } from "i18next";
+import { getI18n } from "../utils/i18n";
+const i18n = getI18n();
+const t = i18n.t.bind(i18n);
 ---
 
 <section id="about" class="about section">
