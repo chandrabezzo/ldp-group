@@ -1,5 +1,6 @@
 ---
 import logo from '../assets/1. LDP GROUP.png';
+import { t } from "i18next";
 ---
 
 <footer class="footer">
@@ -8,47 +9,47 @@ import logo from '../assets/1. LDP GROUP.png';
 			<div class="footer-brand">
 				<img src={logo.src} alt="LDP Group" class="footer-logo" />
 				<p class="footer-tagline">
-					PT. Lentera Duta Persada - Your trusted partner for integrated business solutions.
+					{t("footer.tagline")}
 				</p>
 			</div>
 
 			<div class="footer-links">
 				<div class="footer-column">
-					<h4>Services</h4>
+					<h4>{t("footer.services")}</h4>
 					<ul>
-						<li><a href="#services">Training & Consulting</a></li>
-						<li><a href="#services">Digital Solutions</a></li>
-						<li><a href="#services">Business Tools</a></li>
-						<li><a href="#services">Travel Services</a></li>
+						<li><a href="#services">{t("services.training.title")}</a></li>
+						<li><a href="#services">{t("services.digital.title")}</a></li>
+						<li><a href="#services">{t("services.tools.title")}</a></li>
+						<li><a href="#services">{t("services.travel.title")}</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
-					<h4>Company</h4>
+					<h4>{t("footer.company")}</h4>
 					<ul>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#services">Our Services</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#about">{t("footer.aboutUs")}</a></li>
+						<li><a href="#services">{t("footer.ourServices")}</a></li>
+						<li><a href="#contact">{t("nav.contact")}</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
-					<h4>Connect</h4>
+					<h4>{t("footer.connect")}</h4>
 					<ul>
-						<li><a href="mailto:info@ldpgroup.com">info@ldpgroup.com</a></li>
-						<li><a href="tel:+622112345678">+62 21 1234 5678</a></li>
-						<li>Jakarta, Indonesia</li>
+						<li><a href="mailto:ptlenteradutapersada@gmail.com">ptlenteradutapersada@gmail.com</a></li>
+						<li><a href="https://wa.me/6281223598599">+62 812 2359 8599</a></li>
+						<li>Bandung Barat, Indonesia</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
 		<div class="footer-bottom">
-			<p>&copy; {new Date().getFullYear()} LDP Group - PT. Lentera Duta Persada. All rights reserved.</p>
+			<p>&copy; {new Date().getFullYear()} LDP Group - PT. Lentera Duta Persada. {t("footer.rights")}.</p>
 			<div class="footer-bottom-links">
-				<a href="#">Privacy Policy</a>
+				<a href="#">{t("footer.privacy")}</a>
 				<span>•</span>
-				<a href="#">Terms of Service</a>
+				<a href="#">{t("footer.terms")}</a>
 			</div>
 		</div>
 	</div>

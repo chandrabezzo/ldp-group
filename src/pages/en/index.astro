@@ -1,15 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Services from '../components/Services.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Services from '../../components/Services.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
 import i18next, { t, changeLanguage } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("id");
+changeLanguage("en");
 
 const structuredData = {
 	"@context": "https://schema.org",
@@ -21,21 +21,20 @@ const structuredData = {
 	"description": "LDP Group is an integrated business solutions provider offering training, consulting, digital services, tools, travel, publishing, foundation, and property services.",
 	"address": {
 		"@type": "PostalAddress",
-		"addressLocality": "Jakarta",
+		"addressLocality": "Bandung Barat",
 		"addressCountry": "Indonesia"
 	},
 	"contactPoint": {
 		"@type": "ContactPoint",
-		"telephone": "+62-21-1234-5678",
+		"telephone": "+62-812-2359-8599",
 		"contactType": "Customer Service",
-		"email": "info@ldpgroup.com",
+		"email": "ptlenteradutapersada@gmail.com",
 		"areaServed": "ID",
 		"availableLanguage": ["en", "id"]
 	},
 	"sameAs": [
-		"https://www.linkedin.com/company/ldpgroup",
-		"https://www.facebook.com/ldpgroup",
-		"https://www.instagram.com/ldpgroup"
+		"https://www.linkedin.com/in/ldpdigital",
+		"https://www.instagram.com/ldpdigital"
 	],
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",

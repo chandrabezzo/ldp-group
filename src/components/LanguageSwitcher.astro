@@ -1,0 +1,84 @@
+---
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
+
+const currentLocale = i18next.language;
+---
+
+<div class="language-switcher">
+	<button class="lang-btn" data-locale="id" class:list={[{ active: currentLocale === 'id' }]}>
+		🇮🇩 ID
+	</button>
+	<button class="lang-btn" data-locale="en" class:list={[{ active: currentLocale === 'en' }]}>
+		🇬🇧 EN
+	</button>
+</div>
+
+<style>
+	.language-switcher {
+		display: flex;
+		gap: calc(var(--spacing-unit) * 1);
+		align-items: center;
+		background: var(--color-bg-light);
+		padding: 4px;
+		border-radius: 8px;
+		border: 1px solid var(--color-border);
+	}
+
+	.lang-btn {
+		padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+		border: none;
+		background: transparent;
+		color: var(--color-text);
+		font-weight: 500;
+		font-size: 0.9rem;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: var(--transition);
+		font-family: inherit;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.lang-btn:hover {
+		background: white;
+	}
+
+	.lang-btn.active {
+		background: var(--color-primary);
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.language-switcher {
+			order: 2;
+		}
+	}
+</style>
+
+<script>
+	const langButtons = document.querySelectorAll('.lang-btn');
+
+	langButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const locale = button.getAttribute('data-locale');
+			if (locale) {
+				localStorage.setItem('language', locale);
+
+				const currentPath = window.location.pathname;
+				let newPath = currentPath;
+
+				if (currentPath.startsWith('/en')) {
+					newPath = currentPath.replace('/en', locale === 'id' ? '' : '/en');
+				} else if (currentPath === '/' || currentPath === '') {
+					newPath = locale === 'en' ? '/en' : '/';
+				} else {
+					newPath = locale === 'en' ? `/en${currentPath}` : currentPath.replace('/en', '');
+				}
+
+				window.location.href = newPath || '/';
+			}
+		});
+	});
+</script>

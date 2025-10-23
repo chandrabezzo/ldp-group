@@ -1,50 +1,54 @@
 ---
+import { t } from "i18next";
+import trainingLogo from '../assets/2. LDP Training.png';
 import digitalLogo from '../assets/4. LDP Digital.png';
 import toolsLogo from '../assets/5. LDP TOOLS.png';
 import travelLogo from '../assets/6. LDP Travel.png';
 import publisherLogo from '../assets/7. LDP Publisher.png';
+import foundationLogo from '../assets/8. LDP Foundation.png';
+import propertyLogo from '../assets/9. LDP Property.png';
 
 const services = [
 	{
-		title: 'Training & Consulting',
-		description: 'Professional training programs and expert consulting services to elevate your business capabilities and drive organizational excellence.',
-		icon: '🎓',
+		titleKey: 'services.training.title',
+		descriptionKey: 'services.training.description',
+		logo: trainingLogo.src,
 		color: '#2563eb'
 	},
 	{
-		title: 'Digital Solutions',
-		description: 'Cutting-edge digital transformation services to modernize your business processes and enhance operational efficiency.',
+		titleKey: 'services.digital.title',
+		descriptionKey: 'services.digital.description',
 		logo: digitalLogo.src,
 		color: '#1e40af'
 	},
 	{
-		title: 'Business Tools',
-		description: 'Comprehensive suite of business tools and software solutions designed to streamline workflows and boost productivity.',
+		titleKey: 'services.tools.title',
+		descriptionKey: 'services.tools.description',
 		logo: toolsLogo.src,
 		color: '#f59e0b'
 	},
 	{
-		title: 'Travel Services',
-		description: 'Professional travel management solutions for corporate and business travel needs with exceptional service standards.',
+		titleKey: 'services.travel.title',
+		descriptionKey: 'services.travel.description',
 		logo: travelLogo.src,
 		color: '#ef4444'
 	},
 	{
-		title: 'Publishing',
-		description: 'Professional publishing services for books, journals, and digital content with comprehensive editorial support.',
+		titleKey: 'services.publisher.title',
+		descriptionKey: 'services.publisher.description',
 		logo: publisherLogo.src,
 		color: '#dc2626'
 	},
 	{
-		title: 'Foundation Services',
-		description: 'Social responsibility programs and foundation management services to create positive community impact.',
-		icon: '🤝',
+		titleKey: 'services.foundation.title',
+		descriptionKey: 'services.foundation.description',
+		logo: foundationLogo.src,
 		color: '#10b981'
 	},
 	{
-		title: 'Property Solutions',
-		description: 'Real estate and property management services providing comprehensive solutions for your property needs.',
-		icon: '🏢',
+		titleKey: 'services.property.title',
+		descriptionKey: 'services.property.description',
+		logo: propertyLogo.src,
 		color: '#8b5cf6'
 	}
 ];
@@ -53,9 +57,9 @@ const services = [
 <section id="services" class="services section">
 	<div class="container">
 		<div class="section-header">
-			<h2 class="section-title">Our Services</h2>
+			<h2 class="section-title">{t("services.title")}</h2>
 			<p class="section-subtitle">
-				Comprehensive business solutions tailored to your needs
+				{t("services.subtitle")}
 			</p>
 		</div>
 
@@ -63,14 +67,10 @@ const services = [
 			{services.map((service) => (
 				<div class="service-card">
 					<div class="service-icon" style={`background: linear-gradient(135deg, ${service.color}15 0%, ${service.color}05 100%);`}>
-						{service.logo ? (
-							<img src={service.logo} alt={service.title} />
-						) : (
-							<span class="icon-emoji">{service.icon}</span>
-						)}
+						<img src={service.logo} alt={t(service.titleKey)} />
 					</div>
-					<h3 class="service-title">{service.title}</h3>
-					<p class="service-description">{service.description}</p>
+					<h3 class="service-title">{t(service.titleKey)}</h3>
+					<p class="service-description">{t(service.descriptionKey)}</p>
 					<div class="service-arrow" style={`color: ${service.color};`}>
 						→
 					</div>

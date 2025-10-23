@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Empowering Business Excellence",
+    "subtitle": "LDP Group is your trusted partner for comprehensive business solutions. From training and consulting to digital innovation and beyond.",
+    "exploreServices": "Explore Our Services",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "title": "About LDP Group",
+    "subtitle": "PT. Lentera Duta Persada",
+    "description1": "LDP Group stands as a leading integrated business solutions provider in Indonesia, committed to delivering excellence across multiple industries. Our diverse portfolio encompasses training, consulting, digital transformation, business tools, travel services, publishing, foundation work, and property solutions.",
+    "description2": "With a dedication to innovation and client success, we partner with organizations to overcome challenges, seize opportunities, and achieve sustainable growth. Our team of experienced professionals brings expertise, integrity, and a results-driven approach to every engagement.",
+    "stats": {
+      "divisions": "Service Divisions",
+      "clients": "Clients Served",
+      "experience": "Years Experience"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To empower businesses with innovative solutions that drive growth, efficiency, and sustainable success."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the most trusted and comprehensive business solutions provider in Indonesia and beyond."
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Excellence, integrity, innovation, and client-focused service in everything we do."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive business solutions tailored to your needs",
+    "training": {
+      "title": "Training & Consulting",
+      "description": "Professional training programs and expert consulting services to elevate your business capabilities and drive organizational excellence."
+    },
+    "digital": {
+      "title": "Digital Solutions",
+      "description": "Cutting-edge digital transformation services to modernize your business processes and enhance operational efficiency."
+    },
+    "tools": {
+      "title": "Business Tools",
+      "description": "Comprehensive suite of business tools and software solutions designed to streamline workflows and boost productivity."
+    },
+    "travel": {
+      "title": "Travel Services",
+      "description": "Professional travel management solutions for corporate and business travel needs with exceptional service standards."
+    },
+    "publisher": {
+      "title": "Publishing",
+      "description": "Professional publishing services for books, journals, and digital content with comprehensive editorial support."
+    },
+    "foundation": {
+      "title": "Foundation Services",
+      "description": "Social responsibility programs and foundation management services to create positive community impact."
+    },
+    "property": {
+      "title": "Property Solutions",
+      "description": "Real estate and property management services providing comprehensive solutions for your property needs."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to transform your business? Contact us today to discuss your needs",
+    "info": {
+      "title": "Contact Information",
+      "description": "We're here to help and answer any questions you might have. We look forward to hearing from you.",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "Jakarta, Indonesia"
+    },
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "tagline": "PT. Lentera Duta Persada - Your trusted partner for integrated business solutions.",
+    "services": "Services",
+    "company": "Company",
+    "connect": "Connect",
+    "aboutUs": "About Us",
+    "ourServices": "Our Services",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved"
+  }
+}

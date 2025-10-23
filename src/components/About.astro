@@ -1,33 +1,34 @@
 ---
+import { t } from "i18next";
 ---
 
 <section id="about" class="about section">
 	<div class="container">
 		<div class="about-content">
 			<div class="about-text">
-				<h2 class="about-title">About LDP Group</h2>
-				<div class="about-subtitle">PT. Lentera Duta Persada</div>
+				<h2 class="about-title">{t("about.title")}</h2>
+				<div class="about-subtitle">{t("about.subtitle")}</div>
 
 				<p class="about-description">
-					LDP Group stands as a leading integrated business solutions provider in Indonesia, committed to delivering excellence across multiple industries. Our diverse portfolio encompasses training, consulting, digital transformation, business tools, travel services, publishing, foundation work, and property solutions.
+					{t("about.description1")}
 				</p>
 
 				<p class="about-description">
-					With a dedication to innovation and client success, we partner with organizations to overcome challenges, seize opportunities, and achieve sustainable growth. Our team of experienced professionals brings expertise, integrity, and a results-driven approach to every engagement.
+					{t("about.description2")}
 				</p>
 
 				<div class="stats-grid">
 					<div class="stat-item">
 						<div class="stat-number">8+</div>
-						<div class="stat-label">Service Divisions</div>
+						<div class="stat-label">{t("about.stats.divisions")}</div>
 					</div>
 					<div class="stat-item">
 						<div class="stat-number">100+</div>
-						<div class="stat-label">Clients Served</div>
+						<div class="stat-label">{t("about.stats.clients")}</div>
 					</div>
 					<div class="stat-item">
 						<div class="stat-number">15+</div>
-						<div class="stat-label">Years Experience</div>
+						<div class="stat-label">{t("about.stats.experience")}</div>
 					</div>
 				</div>
 			</div>
@@ -35,18 +36,18 @@
 			<div class="about-features">
 				<div class="feature-card">
 					<div class="feature-icon">🎯</div>
-					<h3>Our Mission</h3>
-					<p>To empower businesses with innovative solutions that drive growth, efficiency, and sustainable success.</p>
+					<h3>{t("about.mission.title")}</h3>
+					<p>{t("about.mission.description")}</p>
 				</div>
 				<div class="feature-card">
 					<div class="feature-icon">👁️</div>
-					<h3>Our Vision</h3>
-					<p>To be the most trusted and comprehensive business solutions provider in Indonesia and beyond.</p>
+					<h3>{t("about.vision.title")}</h3>
+					<p>{t("about.vision.description")}</p>
 				</div>
 				<div class="feature-card">
 					<div class="feature-icon">💎</div>
-					<h3>Our Values</h3>
-					<p>Excellence, integrity, innovation, and client-focused service in everything we do.</p>
+					<h3>{t("about.values.title")}</h3>
+					<p>{t("about.values.description")}</p>
 				</div>
 			</div>
 		</div>
