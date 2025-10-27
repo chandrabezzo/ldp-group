@@ -231,6 +231,23 @@ export async function initI18n(language: string = 'id') {
 }
 
 export function getI18n() {
+  // Ensure i18next is initialized before returning
+  if (!isInitialized) {
+    // Initialize synchronously with default language if not already initialized
+    i18next.init({
+      lng: 'id',
+      fallbackLng: 'id',
+      resources: {
+        id: {
+          translation: idTranslation
+        },
+        en: {
+          translation: enTranslation
+        }
+      }
+    });
+    isInitialized = true;
+  }
   return i18next;
 }
 
