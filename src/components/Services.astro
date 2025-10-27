@@ -16,43 +16,50 @@ const services = [
 		titleKey: 'services.training.title',
 		descriptionKey: 'services.training.description',
 		logo: trainingLogo.src,
-		color: '#2563eb'
+		color: '#2563eb',
+		url: '#'
 	},
 	{
 		titleKey: 'services.digital.title',
 		descriptionKey: 'services.digital.description',
 		logo: digitalLogo.src,
-		color: '#1e40af'
+		color: '#1e40af',
+		url: 'http://ldpdigital.co.id'
 	},
 	{
 		titleKey: 'services.tools.title',
 		descriptionKey: 'services.tools.description',
 		logo: toolsLogo.src,
-		color: '#f59e0b'
+		color: '#f59e0b',
+		url: '#'
 	},
 	{
 		titleKey: 'services.travel.title',
 		descriptionKey: 'services.travel.description',
 		logo: travelLogo.src,
-		color: '#ef4444'
+		color: '#ef4444',
+		url: '#'
 	},
 	{
 		titleKey: 'services.publisher.title',
 		descriptionKey: 'services.publisher.description',
 		logo: publisherLogo.src,
-		color: '#dc2626'
+		color: '#dc2626',
+		url: '#'
 	},
 	{
 		titleKey: 'services.foundation.title',
 		descriptionKey: 'services.foundation.description',
 		logo: foundationLogo.src,
-		color: '#10b981'
+		color: '#10b981',
+		url: '#'
 	},
 	{
 		titleKey: 'services.property.title',
 		descriptionKey: 'services.property.description',
 		logo: propertyLogo.src,
-		color: '#8b5cf6'
+		color: '#8b5cf6',
+		url: '#'
 	}
 ];
 ---
@@ -68,16 +75,18 @@ const services = [
 
 		<div class="services-grid">
 			{services.map((service) => (
-				<div class="service-card">
-					<div class="service-icon" style={`background: linear-gradient(135deg, ${service.color}15 0%, ${service.color}05 100%);`}>
-						<img src={service.logo} alt={t(service.titleKey)} />
+				<a href={service.url} class="service-card-link">
+					<div class="service-card">
+						<div class="service-icon" style={`background: linear-gradient(135deg, ${service.color}15 0%, ${service.color}05 100%);`}>
+							<img src={service.logo} alt={t(service.titleKey)} />
+						</div>
+						<h3 class="service-title">{t(service.titleKey)}</h3>
+						<p class="service-description">{t(service.descriptionKey)}</p>
+						<div class="service-arrow" style={`color: ${service.color};`}>
+							→
+						</div>
 					</div>
-					<h3 class="service-title">{t(service.titleKey)}</h3>
-					<p class="service-description">{t(service.descriptionKey)}</p>
-					<div class="service-arrow" style={`color: ${service.color};`}>
-						→
-					</div>
-				</div>
+				</a>
 			))}
 		</div>
 	</div>
@@ -122,6 +131,12 @@ const services = [
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: calc(var(--spacing-unit) * 4);
+	}
+
+	.service-card-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
 	}
 
 	.service-card {
