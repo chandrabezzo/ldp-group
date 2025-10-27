@@ -1,7 +1,8 @@
 ---
-import { getI18n } from "../utils/i18n";
-const i18n = getI18n();
-const t = i18n.t.bind(i18n);
+import { getLanguageFromURL, createTranslator } from "../utils/i18n";
+
+const currentLang = getLanguageFromURL(Astro.url.pathname);
+const t = createTranslator(currentLang);
 ---
 
 <section id="about" class="about section">

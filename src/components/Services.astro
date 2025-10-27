@@ -1,8 +1,9 @@
 ---
-import { getI18n } from "../utils/i18n";
-const i18n = getI18n();
-const t = i18n.t.bind(i18n);
+import { getLanguageFromURL, createTranslator } from "../utils/i18n";
 import trainingLogo from '../assets/2. LDP Training.png';
+
+const currentLang = getLanguageFromURL(Astro.url.pathname);
+const t = createTranslator(currentLang);
 import digitalLogo from '../assets/4. LDP Digital.png';
 import toolsLogo from '../assets/5. LDP TOOLS.png';
 import travelLogo from '../assets/6. LDP Travel.png';

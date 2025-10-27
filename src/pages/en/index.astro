@@ -6,10 +6,6 @@ import About from '../../components/About.astro';
 import Services from '../../components/Services.astro';
 import Contact from '../../components/Contact.astro';
 import Footer from '../../components/Footer.astro';
-import { initI18n } from "../../utils/i18n";
-import { HeadHrefLangs } from "astro-i18next/components";
-
-await initI18n("en");
 
 const structuredData = {
 	"@context": "https://schema.org",
@@ -101,8 +97,7 @@ const structuredData = {
 };
 ---
 
-<Layout>
-	<HeadHrefLangs slot="head" />
+<Layout lang="en">
 	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} slot="head" />
 
 	<Header />

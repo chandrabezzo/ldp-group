@@ -1,15 +1,14 @@
 ---
-import { localizePath } from "astro-i18next";
-import i18next from "i18next";
+import { getLanguageFromURL } from '../utils/i18n';
 
-const currentLocale = i18next.language;
+const currentLang = getLanguageFromURL(Astro.url.pathname);
 ---
 
 <div class="language-switcher">
-	<button class="lang-btn" data-locale="id" class:list={[{ active: currentLocale === 'id' }]}>
+	<button class="lang-btn" data-locale="id" class:list={[{ active: currentLang === 'id' }]}>
 		🇮🇩 ID
 	</button>
-	<button class="lang-btn" data-locale="en" class:list={[{ active: currentLocale === 'en' }]}>
+	<button class="lang-btn" data-locale="en" class:list={[{ active: currentLang === 'en' }]}>
 		🇬🇧 EN
 	</button>
 </div>
@@ -62,22 +61,28 @@ const currentLocale = i18next.language;
 
 	langButtons.forEach(button => {
 		button.addEventListener('click', () => {
-			const locale = button.getAttribute('data-locale');
-			if (locale) {
-				localStorage.setItem('language', locale);
-
+			const targetLocale = button.getAttribute('data-locale') as 'id' | 'en';
+			if (targetLocale) {
 				const currentPath = window.location.pathname;
-				let newPath = currentPath;
+				let newPath: string;
 
-				if (currentPath.startsWith('/en')) {
-					newPath = currentPath.replace('/en', locale === 'id' ? '' : '/en');
-				} else if (currentPath === '/' || currentPath === '') {
-					newPath = locale === 'en' ? '/en' : '/';
-				} else {
-					newPath = locale === 'en' ? `/en${currentPath}` : currentPath.replace('/en', '');
+				// Remove /en prefix if switching to Indonesian
+				if (targetLocale === 'id') {
+					newPath = currentPath.replace(/^\/en(\/|$)/, '/') || '/';
+				} 
+				// Add /en prefix if switching to English
+				else {
+					if (currentPath === '/' || currentPath === '') {
+						newPath = '/en';
+					} else if (currentPath.startsWith('/en')) {
+						newPath = currentPath; // Already on English page
+					} else {
+						newPath = `/en${currentPath}`;
+					}
 				}
 
-				window.location.href = newPath || '/';
+				// Navigate to the new path
+				window.location.href = newPath;
 			}
 		});
 	});
