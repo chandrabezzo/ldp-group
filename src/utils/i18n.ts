@@ -3,6 +3,7 @@ const translations = {
   id: {
     "nav": {
       "about": "Tentang",
+      "newsArticle": "Berita & Artikel",
       "services": "Layanan",
       "contact": "Hubungi Kami"
     },
@@ -105,6 +106,7 @@ const translations = {
   en: {
     "nav": {
       "about": "About",
+      "newsArticle": "News & Article",
       "services": "Services",
       "contact": "Contact Us"
     },
